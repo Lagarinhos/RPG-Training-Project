@@ -1,3 +1,6 @@
+from os import name
+import random
+
 class Char():
     
          ## Character's Sheet ##
@@ -199,4 +202,39 @@ You can allocate max 5 points in one single attribute and no attribute can have 
                """.format(n=self.name, ro=self.role, le=self.level, cp=self.cp, s=self.strenght, a=self.agility, r=self.resistance, aa=self.armor, f=self.fpower, ma=self.mattack, ra=self.rattack, d=self.defense, l=self.life)
                print(sheet)
                
-     
+story = input('choose ur direction: left or right').little()
+if story == 'left':
+    print('you are in a forest')
+    print('you see a cave')
+    print('you go inside')
+    print('you see a big dragon')
+    print('you can fight or run')
+    print('choose your action')
+    action = input('fight or run')
+    if action == 'fight':
+        print('you fight the dragon')
+        player_choice = input('Choose your weapon: sword, bow, spear\n')
+        computer_choice = random.choice(['fire', 'tail', 'bite'])
+        
+if player_choice == 'sword' and computer_choice == 'fire':
+    print('\nDragon tried to burn you with its fire ball. n/Your sword didnt help but you survived thanks your shiny armory. n/Do yoy wont to try again? y or n').little()
+elif player_choice == 'sword' and computer_choice == 'tail':
+    print('\nThe dragon tried to sweep you with its golden tail but you cut it off. n/The dragon is deadly injured and dies!)')
+elif player_choice == 'sword' and computer_choice == 'bite':
+    print('\nthe Dragon tried to bite you with its head and you. n/You felt over a stone and lost balance.n\Very unfortunate and you got teared into bloody pieces....')
+elif player_choice == 'bowl' and computer_choice == 'fire':
+    print('\nBefore your arrow could leave your bowl and hit his unpenetrated body, n\ the dragon roared and roasted you.n/You died in painful death.')
+elif player_choice == 'bowl' and computer_choice == 'tail':
+    print('\nThe dragon tried to sweep you with its massive tail but you managed move away and archer his nose. n/You managed to get away from the dragon and you are safe. Do you want to try again?').little()
+elif player_choice == 'bowl' and computer_choice == 'bite':
+    print(f'You send the arrow right through his eye into his brain.n\You are the hero of the local people. n\ Hura to hero' + name )
+elif player_choice == 'spear' and computer_choice == 'fire':
+    print('\n The dragon send some fire balls but you send back your spear. \n You hit him right in the eye n\ and the dragon dies in an agony. Well done!')
+elif player_choice == 'spear' and computer_choice == 'tail':
+    print("\nYour spear didnt help you much against dragon's tail.\n Its weight squashed.n\ You are dying looking n\ like a very bloody pancake")
+elif player_choice == 'spear' and computer_choice == 'bite':
+    print('\nHe tried to bite you only to get speared his tongue. It hurts and he stepped back. Do you want to attack again? y or n').little()
+
+elif action == 'run':
+        print('you run away')
+        print('you saved your life coward, well done')
